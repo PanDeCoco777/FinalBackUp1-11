@@ -10,6 +10,7 @@ import admin.AdminDash;
 import config.dcConnector;
 import config.passwordHash;
 import config.session;
+import java.awt.Color;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,6 +28,9 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         initComponents();
     }
+    
+    Color navcolor = new Color(7,46,51);
+    Color hovercolor = new Color(41,77,97);
     
     static String status;
     static String type;

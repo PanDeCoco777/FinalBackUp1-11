@@ -29,7 +29,9 @@ public class UserDash extends javax.swing.JFrame {
         initComponents();
     }
     
-
+        Color hovercolor = new Color(7,46,51);
+        Color navcolor = new Color(5,22,26);
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,11 +44,14 @@ public class UserDash extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         AD_nm1 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         AD_ln = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
         AD_em1 = new javax.swing.JLabel();
-        AD_adress = new javax.swing.JLabel();
+        r = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -64,18 +69,11 @@ public class UserDash extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(7, 46, 51));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/account (1).png"))); // NOI18N
 
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("Sitka Small", 3, 10)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(41, 77, 97));
-        jLabel6.setText("Log Out");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
+        jPanel5.setBackground(new java.awt.Color(5, 22, 26));
 
         AD_nm1.setBackground(new java.awt.Color(204, 204, 204));
         AD_nm1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
@@ -83,11 +81,41 @@ public class UserDash extends javax.swing.JFrame {
         AD_nm1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_nm1.setText("Name");
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AD_nm1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(AD_nm1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(5, 22, 26));
+
         AD_ln.setBackground(new java.awt.Color(204, 204, 204));
         AD_ln.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
         AD_ln.setForeground(new java.awt.Color(109, 165, 192));
         AD_ln.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_ln.setText("Last Name");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AD_ln, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(AD_ln))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(5, 22, 26));
 
         AD_em1.setBackground(new java.awt.Color(204, 204, 204));
         AD_em1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
@@ -95,32 +123,69 @@ public class UserDash extends javax.swing.JFrame {
         AD_em1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_em1.setText("Email");
 
-        AD_adress.setBackground(new java.awt.Color(204, 204, 204));
-        AD_adress.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
-        AD_adress.setForeground(new java.awt.Color(109, 165, 192));
-        AD_adress.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AD_adress.setText("Address");
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AD_em1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(AD_em1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        r.setBackground(new java.awt.Color(7, 46, 51));
+        r.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        r.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rMouseExited(evt);
+            }
+        });
+
+        jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Sitka Small", 3, 8)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(41, 77, 97));
+        jLabel7.setText("Log Out");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rLayout = new javax.swing.GroupLayout(r);
+        r.setLayout(rLayout);
+        rLayout.setHorizontalGroup(
+            rLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        rLayout.setVerticalGroup(
+            rLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AD_ln)
-                            .addComponent(AD_nm1)
-                            .addComponent(AD_em1)
-                            .addComponent(AD_adress))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1)
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addComponent(r, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,16 +193,14 @@ public class UserDash extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(AD_nm1)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AD_ln)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AD_em1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AD_adress)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(20, 20, 20))
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addComponent(r, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel2);
@@ -240,14 +303,6 @@ public class UserDash extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-       
-        LoginForm log = new LoginForm();
-        log.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         session sess = session.getInstance();
         
@@ -277,6 +332,25 @@ public class UserDash extends javax.swing.JFrame {
             Ad.setVisible(true);
             this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rMouseClicked
+        LoginForm log = new LoginForm();
+        log.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_rMouseClicked
+
+    private void rMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rMouseEntered
+        r.setBackground(navcolor);
+    }//GEN-LAST:event_rMouseEntered
+
+    private void rMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rMouseExited
+        r.setBackground(hovercolor);
+    }//GEN-LAST:event_rMouseExited
 
     
     /**
@@ -318,7 +392,6 @@ public class UserDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AD_adress;
     private javax.swing.JLabel AD_em1;
     private javax.swing.JLabel AD_ln;
     private javax.swing.JLabel AD_nm1;
@@ -326,11 +399,15 @@ public class UserDash extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel r;
     // End of variables declaration//GEN-END:variables
 }

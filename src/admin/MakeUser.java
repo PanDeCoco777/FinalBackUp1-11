@@ -5,29 +5,41 @@
  */
 package admin;
 
+import Parking.SetUp;
 import User.UserDash;
+import com.mysql.jdbc.Connection;
 import config.dcConnector;
 import config.passwordHash;
 import guiprojectforpta.LoginForm;
 import guiprojectforpta.SigninForm;
 import java.security.NoSuchAlgorithmException;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author pc
  */
+
 public class MakeUser extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form MakeUser
      */
     public MakeUser() {
         initComponents();
+        
     }
-
+    
+  
+    
     public static String Email, Username;
     
     public boolean duplicateCheck(){
@@ -479,7 +491,7 @@ public class MakeUser extends javax.swing.JFrame {
     }//GEN-LAST:event_refreshActionPerformed
 
     private void deletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_deletActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
@@ -537,7 +549,7 @@ public class MakeUser extends javax.swing.JFrame {
     public javax.swing.JButton Update;
     public javax.swing.JButton add1;
     private javax.swing.JButton cancel;
-    private javax.swing.JButton clear;
+    public javax.swing.JButton clear;
     private javax.swing.JButton delet;
     public javax.swing.JTextField em;
     public javax.swing.JTextField fn;
