@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2024 at 04:55 PM
+-- Generation Time: May 05, 2024 at 03:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -78,12 +78,12 @@ INSERT INTO `sales_product` (`id`, `sales_id`, `tickettype`, `qty`, `price`, `to
 --
 
 CREATE TABLE `ttb` (
-  `u_id` int(20) NOT NULL COMMENT '1001',
+  `u_id` int(11) NOT NULL COMMENT '1000',
   `u_Email` varchar(50) NOT NULL,
   `u_Fname` varchar(50) NOT NULL,
   `u_Lname` varchar(50) NOT NULL,
   `u_Username` varchar(50) NOT NULL,
-  `u_Password` varchar(150) NOT NULL,
+  `u_Password` varchar(255) NOT NULL,
   `u_type` varchar(50) NOT NULL,
   `u_status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -93,8 +93,10 @@ CREATE TABLE `ttb` (
 --
 
 INSERT INTO `ttb` (`u_id`, `u_Email`, `u_Fname`, `u_Lname`, `u_Username`, `u_Password`, `u_type`, `u_status`) VALUES
-(1021, 'Steven@gmail.com', 'Steven', 'Stev', 'Stev', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'Admin', 'Active'),
-(1022, 'Pable@gmail.com', 'Pable', 'Pab', 'pab', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'User', 'Active');
+(1001, 'Steven@gmail.com', 'Steven', 'Pable', 'PandeCoco', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'Admin', 'Active'),
+(1002, 'Pable@gmail.com', 'Pable', 'Steven', 'Pan', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'User', 'Active'),
+(1003, 'Guko@gmail.com', 'Guko', 'Buko', 'kakarot', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Pending'),
+(1004, 'Dummy@gmail.com', 'Mommy', 'single', 'Kape', 'NBYWrmoA/JoDM/ch9Tgq8p41ekFyon8BzFcia+U+AQc=', 'User', 'Pending');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +140,7 @@ ALTER TABLE `sales_product`
 -- AUTO_INCREMENT for table `ttb`
 --
 ALTER TABLE `ttb`
-  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT COMMENT '1001', AUTO_INCREMENT=1023;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1000', AUTO_INCREMENT=1005;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

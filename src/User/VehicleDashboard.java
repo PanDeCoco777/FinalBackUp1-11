@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Parking;
+package User;
 
+import Parking.*;
 import admin.AdminDash;
 import config.session;
 import guiprojectforpta.LoginForm;
@@ -19,11 +20,11 @@ import javax.swing.JOptionPane;
  *
  * @author TABANG
  */
-public class ParkingDetails extends javax.swing.JFrame {
+public class VehicleDashboard extends javax.swing.JFrame {
 
 
     
-    public ParkingDetails() {
+    public VehicleDashboard() {
         initComponents();
          showDate();
          
@@ -52,8 +53,8 @@ public class ParkingDetails extends javax.swing.JFrame {
     }
 
 
-    Color  hovercolor = new Color (12,112,117);
-    Color  navcolor = new Color (5,22,26);  
+    Color  hovercolor = new Color (5,38,89);
+    Color  navcolor = new Color (84,131,179);  
     
     
     public void showDate(){
@@ -110,9 +111,9 @@ public class ParkingDetails extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel1.setBackground(new java.awt.Color(2, 16, 36));
 
-        jPanel2.setBackground(new java.awt.Color(12, 112, 117));
+        jPanel2.setBackground(new java.awt.Color(5, 38, 89));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(109, 165, 192));
@@ -122,7 +123,7 @@ public class ParkingDetails extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(109, 165, 192));
         jLabel2.setText("Welcome");
 
-        jPanel5.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel5.setBackground(new java.awt.Color(2, 16, 36));
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         date.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
@@ -134,14 +135,14 @@ public class ParkingDetails extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel6.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel6.setBackground(new java.awt.Color(2, 16, 36));
         jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         AD_nm.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
@@ -162,7 +163,7 @@ public class ParkingDetails extends javax.swing.JFrame {
             .addComponent(AD_nm)
         );
 
-        jPanel7.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel7.setBackground(new java.awt.Color(2, 16, 36));
         jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         time.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
@@ -174,7 +175,7 @@ public class ParkingDetails extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(time, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+            .addComponent(time, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +190,7 @@ public class ParkingDetails extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel10.setText("ADMIN");
+        jLabel10.setText("USER");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -203,7 +204,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 645, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 691, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -237,13 +238,13 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jPanel3.setBackground(new java.awt.Color(7, 46, 51));
+        jPanel3.setBackground(new java.awt.Color(5, 38, 89));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel4.setBackground(new java.awt.Color(12, 112, 117));
+        jPanel4.setBackground(new java.awt.Color(5, 38, 89));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        q.setBackground(new java.awt.Color(12, 112, 117));
+        q.setBackground(new java.awt.Color(5, 38, 89));
         q.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         q.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -259,7 +260,7 @@ public class ParkingDetails extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel3.setText("Admindashboard");
+        jLabel3.setText("User Dashboard");
 
         javax.swing.GroupLayout qLayout = new javax.swing.GroupLayout(q);
         q.setLayout(qLayout);
@@ -278,7 +279,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        w.setBackground(new java.awt.Color(12, 112, 117));
+        w.setBackground(new java.awt.Color(5, 38, 89));
         w.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         w.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -313,7 +314,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        e.setBackground(new java.awt.Color(12, 112, 117));
+        e.setBackground(new java.awt.Color(5, 38, 89));
         e.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         e.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -326,7 +327,7 @@ public class ParkingDetails extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel6.setText("Null");
+        jLabel6.setText("NULL");
 
         javax.swing.GroupLayout eLayout = new javax.swing.GroupLayout(e);
         e.setLayout(eLayout);
@@ -345,7 +346,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        a.setBackground(new java.awt.Color(12, 112, 117));
+        a.setBackground(new java.awt.Color(5, 38, 89));
         a.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         a.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -377,7 +378,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        s.setBackground(new java.awt.Color(12, 112, 117));
+        s.setBackground(new java.awt.Color(5, 38, 89));
         s.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         s.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -393,7 +394,7 @@ public class ParkingDetails extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel9.setText("Print");
+        jLabel9.setText("Ticket");
 
         javax.swing.GroupLayout sLayout = new javax.swing.GroupLayout(s);
         s.setLayout(sLayout);
@@ -412,7 +413,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        d.setBackground(new java.awt.Color(12, 112, 117));
+        d.setBackground(new java.awt.Color(5, 38, 89));
         d.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         d.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -428,23 +429,23 @@ public class ParkingDetails extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel8.setText("SetUp");
+        jLabel8.setText("NewTransaction");
 
         javax.swing.GroupLayout dLayout = new javax.swing.GroupLayout(d);
         d.setLayout(dLayout);
         dLayout.setHorizontalGroup(
             dLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dLayout.setVerticalGroup(
             dLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(dLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel8)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -459,7 +460,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                     .addComponent(a, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(s, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(d, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(q, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(q, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -480,7 +481,7 @@ public class ParkingDetails extends javax.swing.JFrame {
                 .addContainerGap(278, Short.MAX_VALUE))
         );
 
-        jDesktopPane1.setBackground(new java.awt.Color(5, 22, 26));
+        jDesktopPane1.setBackground(new java.awt.Color(2, 16, 36));
         jDesktopPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -506,7 +507,7 @@ public class ParkingDetails extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -592,8 +593,8 @@ public class ParkingDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_dMouseExited
 
     private void qMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_qMouseClicked
-        AdminDash ad = new AdminDash();
-        ad.setVisible(true);
+        UserDash ud = new UserDash();
+        ud.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_qMouseClicked
 
@@ -617,9 +618,9 @@ public class ParkingDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dMouseClicked
-        SetUp sp = new SetUp();
+        VehicleInformation vi =  new VehicleInformation();
         jDesktopPane1.removeAll();
-        jDesktopPane1.add(sp).setVisible(true);
+        jDesktopPane1.add(vi).setVisible(true);
     }//GEN-LAST:event_dMouseClicked
 
     private void wMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wMouseClicked
@@ -627,9 +628,7 @@ public class ParkingDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_wMouseClicked
 
     private void sMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sMouseClicked
-        SetUp su =  new SetUp();
-        jDesktopPane1.removeAll();
-        jDesktopPane1.add(su).setVisible(true);
+  
     }//GEN-LAST:event_sMouseClicked
 
     /**
@@ -649,21 +648,23 @@ public class ParkingDetails extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ParkingDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehicleDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ParkingDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehicleDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ParkingDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehicleDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ParkingDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehicleDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ParkingDetails().setVisible(true);
+                new VehicleDashboard().setVisible(true);
             }
         });
     }

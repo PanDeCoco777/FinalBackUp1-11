@@ -29,7 +29,7 @@ public class UserDash extends javax.swing.JFrame {
         initComponents();
     }
     
-        Color hovercolor = new Color(7,46,51);
+        Color hovercolor = new Color(2,16,36);
         Color navcolor = new Color(5,22,26);
     
     /**
@@ -68,16 +68,17 @@ public class UserDash extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(7, 46, 51));
+        jPanel2.setBackground(new java.awt.Color(5, 38, 89));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/account (1).png"))); // NOI18N
 
-        jPanel5.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel5.setBackground(new java.awt.Color(2, 16, 36));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         AD_nm1.setBackground(new java.awt.Color(204, 204, 204));
-        AD_nm1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
-        AD_nm1.setForeground(new java.awt.Color(109, 165, 192));
+        AD_nm1.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
+        AD_nm1.setForeground(new java.awt.Color(193, 232, 255));
         AD_nm1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_nm1.setText("Name");
 
@@ -89,16 +90,15 @@ public class UserDash extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(AD_nm1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(AD_nm1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel6.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel6.setBackground(new java.awt.Color(2, 16, 36));
+        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         AD_ln.setBackground(new java.awt.Color(204, 204, 204));
-        AD_ln.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
-        AD_ln.setForeground(new java.awt.Color(109, 165, 192));
+        AD_ln.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
+        AD_ln.setForeground(new java.awt.Color(193, 232, 255));
         AD_ln.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_ln.setText("Last Name");
 
@@ -106,7 +106,7 @@ public class UserDash extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AD_ln, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AD_ln, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,11 +115,12 @@ public class UserDash extends javax.swing.JFrame {
                 .addComponent(AD_ln))
         );
 
-        jPanel7.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel7.setBackground(new java.awt.Color(2, 16, 36));
+        jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         AD_em1.setBackground(new java.awt.Color(204, 204, 204));
-        AD_em1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
-        AD_em1.setForeground(new java.awt.Color(109, 165, 192));
+        AD_em1.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
+        AD_em1.setForeground(new java.awt.Color(193, 232, 255));
         AD_em1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AD_em1.setText("Email");
 
@@ -136,7 +137,7 @@ public class UserDash extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        r.setBackground(new java.awt.Color(7, 46, 51));
+        r.setBackground(new java.awt.Color(2, 16, 36));
         r.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         r.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -181,11 +182,11 @@ public class UserDash extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(r, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
                 .addContainerGap(31, Short.MAX_VALUE))
-            .addComponent(r, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +199,7 @@ public class UserDash extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(r, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -206,11 +207,11 @@ public class UserDash extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 40, 140, 430);
 
-        jPanel3.setBackground(new java.awt.Color(12, 112, 117));
+        jPanel3.setBackground(new java.awt.Color(84, 131, 179));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel2.setForeground(new java.awt.Color(193, 232, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("USER DASHBOARD");
 
@@ -234,8 +235,9 @@ public class UserDash extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 0, 610, 40);
 
-        jPanel4.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel4.setBackground(new java.awt.Color(2, 16, 36));
 
+        jButton2.setForeground(new java.awt.Color(41, 77, 97));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/motorbike (1).png"))); // NOI18N
         jButton2.setText("Account");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -244,26 +246,29 @@ public class UserDash extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setForeground(new java.awt.Color(41, 77, 97));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/car (1).png"))); // NOI18N
-        jButton4.setText("Car Parking List");
+        jButton4.setText("Vehicle Dashboard");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Borcelle CAR wash (1) (1).png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Borcelle CAR wash (2) (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(172, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(150, 150, 150))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                     .addContainerGap(110, Short.MAX_VALUE)
@@ -273,11 +278,11 @@ public class UserDash extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
+                .addGap(151, 151, 151)
                 .addComponent(jButton4)
-                .addGap(18, 18, 18)
+                .addGap(54, 54, 54)
                 .addComponent(jButton2)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                     .addContainerGap(90, Short.MAX_VALUE)
@@ -324,7 +329,9 @@ public class UserDash extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+            VehicleDashboard Vd = new VehicleDashboard();
+            Vd.setVisible(true);
+            this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

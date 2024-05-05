@@ -237,16 +237,18 @@ public class AdminDash extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(5, 22, 26));
 
+        jButton2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/motorbike (1).png"))); // NOI18N
-        jButton2.setText("Motor Cycle List");
+        jButton2.setText("USERSDATA");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jButton4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/car (1).png"))); // NOI18N
-        jButton4.setText(" Parking Details");
+        jButton4.setText("MONITORING");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

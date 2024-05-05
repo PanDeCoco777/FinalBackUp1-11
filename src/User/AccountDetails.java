@@ -61,16 +61,17 @@ public class AccountDetails extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(7, 46, 51));
+        jPanel2.setBackground(new java.awt.Color(5, 38, 89));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/account (1).png"))); // NOI18N
 
-        jPanel5.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel5.setBackground(new java.awt.Color(2, 16, 36));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         iddisplay.setBackground(new java.awt.Color(204, 204, 204));
-        iddisplay.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
-        iddisplay.setForeground(new java.awt.Color(109, 165, 192));
+        iddisplay.setFont(new java.awt.Font("Sitka Subheading", 1, 10)); // NOI18N
+        iddisplay.setForeground(new java.awt.Color(193, 232, 255));
         iddisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iddisplay.setText("...");
 
@@ -82,9 +83,7 @@ public class AccountDetails extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(iddisplay))
+            .addComponent(iddisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -110,11 +109,11 @@ public class AccountDetails extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 40, 140, 430);
 
-        jPanel3.setBackground(new java.awt.Color(12, 112, 117));
+        jPanel3.setBackground(new java.awt.Color(84, 131, 179));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel2.setForeground(new java.awt.Color(193, 232, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ACCOUNT DETAILS");
 
@@ -138,31 +137,32 @@ public class AccountDetails extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 0, 610, 40);
 
-        jPanel4.setBackground(new java.awt.Color(5, 22, 26));
+        jPanel4.setBackground(new java.awt.Color(2, 16, 36));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setBackground(new java.awt.Color(41, 41, 41));
         jLabel10.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel10.setForeground(new java.awt.Color(193, 232, 255));
         jLabel10.setText("Email");
 
         jLabel13.setBackground(new java.awt.Color(41, 41, 41));
         jLabel13.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel13.setForeground(new java.awt.Color(193, 232, 255));
         jLabel13.setText("Name");
 
         jLabel11.setBackground(new java.awt.Color(41, 41, 41));
         jLabel11.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel11.setForeground(new java.awt.Color(193, 232, 255));
         jLabel11.setText("Last Name");
 
         jLabel7.setBackground(new java.awt.Color(41, 41, 41));
         jLabel7.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel7.setForeground(new java.awt.Color(193, 232, 255));
         jLabel7.setText("Username");
 
         jLabel12.setBackground(new java.awt.Color(41, 41, 41));
         jLabel12.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel12.setForeground(new java.awt.Color(193, 232, 255));
         jLabel12.setText("User Type");
 
         ut.setFont(new java.awt.Font("Sitka Banner", 1, 14)); // NOI18N
@@ -170,7 +170,7 @@ public class AccountDetails extends javax.swing.JFrame {
 
         jLabel14.setBackground(new java.awt.Color(41, 41, 41));
         jLabel14.setFont(new java.awt.Font("Sitka Small", 3, 10)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel14.setForeground(new java.awt.Color(41, 77, 97));
         jLabel14.setText("Change Password");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -183,7 +183,7 @@ public class AccountDetails extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(155, Short.MAX_VALUE)
+                .addContainerGap(149, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel14)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +222,7 @@ public class AccountDetails extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(52, 52, 52))
         );

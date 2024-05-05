@@ -5,6 +5,7 @@
  */
 package admin;
 
+import Parking.SetUp;
 import guiprojectforpta.*;
 import guiprojectforpta.SigninForm;
 import admin.UserForm;
@@ -13,9 +14,12 @@ import config.dcConnector;
 import config.session;
 import java.awt.Color;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -35,12 +39,14 @@ public class UserForm extends javax.swing.JFrame {
         displayData();
         
     }
-    
-   
-    private Connection connect;
+    java.sql.Connection connect;
+    PreparedStatement pst1;
+    PreparedStatement pst2;
+
     Color navcolor = new Color(7,46,51);
     Color hovercolor = new Color(41,77,97);
     
+
     
        public void displayData(){
         try{
@@ -424,7 +430,7 @@ public class UserForm extends javax.swing.JFrame {
     private void DeletMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletMouseClicked
 
       
-     
+     /*
         
            DefaultTableModel tbl = (DefaultTableModel) Tb.getModel();
              
@@ -436,10 +442,31 @@ public class UserForm extends javax.swing.JFrame {
                 }else{
                     JOptionPane.showMessageDialog(null, "Please Selet Single Row For Delete");
           }      
-            }
+            }*/
                 
            
-           
+     try {
+         int rowIndex = Tb.getSelectedRow();
+        if (rowIndex >= 0){ 
+            Class.forName("com.mysql.jdbc.Driver");
+            connect  = DriverManager.getConnection("jdbc:mysql://localhost:3306/userandadmin", "root", "");
+            
+            String value = (Tb.getModel().getValueAt(rowIndex, 0).toString());
+            String query = "DELETE FROM ttb WHERE u_id = " + value;
+            PreparedStatement pst = connect.prepareStatement(query);
+            pst.executeUpdate();
+            DefaultTableModel model = (DefaultTableModel)Tb.getModel();
+            model.setRowCount(0);
+            displayData();
+            JOptionPane.showMessageDialog(null, "Deleted Successfully");
+            }else{
+                JOptionPane.showMessageDialog(null, "Please Select First to Delet");
+            }
+          } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserForm.class.getName()).log(Level.SEVERE, null, ex);
+        }  
     }//GEN-LAST:event_DeletMouseClicked
 
     private void DeletMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletMouseEntered
