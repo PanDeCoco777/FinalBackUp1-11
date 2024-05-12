@@ -378,7 +378,12 @@ public class UserForm extends javax.swing.JFrame {
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
            MakeUser Mu = new MakeUser();
            Mu.setVisible(true);
+           Mu.remove.setEnabled(false);
+           Mu.select.setEnabled(true);
            this.dispose();
+           
+           
+                   
 
     }//GEN-LAST:event_AddMouseClicked
 
@@ -400,14 +405,26 @@ public class UserForm extends javax.swing.JFrame {
              Mu.fn.setText(""+rs.getString("u_Fname"));
              Mu.ln.setText(""+rs.getString("u_Lname"));
              Mu.em.setText(""+rs.getString("u_Email"));
-           
              Mu.us.setText(""+rs.getString("u_Username"));
              Mu.pw.setText(""+rs.getString("u_Password"));             
              Mu.ut.setSelectedItem(""+rs.getString("u_type"));
              Mu.ut1.setSelectedItem(""+rs.getString("u_status"));
+             Mu.image.setIcon(Mu.ResizeImage(rs.getString("u_image"),null, Mu.image));
+             Mu.oldpath = rs.getString("u_image"); 
+             Mu.path = rs.getString("u_image");
+             Mu.destination = rs.getString("u_image");
              Mu.add1.setEnabled(false);
              Mu.Update.setEnabled(true);
              Mu.setVisible(true);
+            
+          if(rs.getString("u_image").isEmpty()){
+              Mu.select.setEnabled(true);
+              Mu.remove.setEnabled(false);
+          }else{
+              Mu.select.setEnabled(false);
+              Mu.remove.setEnabled(true);
+          }   
+             
              this.dispose();
          }
          

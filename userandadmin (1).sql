@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2024 at 03:43 PM
+-- Generation Time: May 12, 2024 at 03:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -85,18 +85,20 @@ CREATE TABLE `ttb` (
   `u_Username` varchar(50) NOT NULL,
   `u_Password` varchar(255) NOT NULL,
   `u_type` varchar(50) NOT NULL,
-  `u_status` varchar(50) NOT NULL
+  `u_status` varchar(50) NOT NULL,
+  `u_image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ttb`
 --
 
-INSERT INTO `ttb` (`u_id`, `u_Email`, `u_Fname`, `u_Lname`, `u_Username`, `u_Password`, `u_type`, `u_status`) VALUES
-(1001, 'Steven@gmail.com', 'Steven', 'Pable', 'PandeCoco', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'Admin', 'Active'),
-(1002, 'Pable@gmail.com', 'Pable', 'Steven', 'Pan', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'User', 'Active'),
-(1003, 'Guko@gmail.com', 'Guko', 'Buko', 'kakarot', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Pending'),
-(1004, 'Dummy@gmail.com', 'Mommy', 'single', 'Kape', 'NBYWrmoA/JoDM/ch9Tgq8p41ekFyon8BzFcia+U+AQc=', 'User', 'Pending');
+INSERT INTO `ttb` (`u_id`, `u_Email`, `u_Fname`, `u_Lname`, `u_Username`, `u_Password`, `u_type`, `u_status`, `u_image`) VALUES
+(1001, 'Steven@gmail.com', 'Steven', 'Pable', 'PandeCoco', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'Admin', 'Active', ''),
+(1002, 'Pable@gmail.com', 'Pable', 'Steven', 'Pan', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'User', 'Active', ''),
+(1003, 'Guko@gmail.com', 'Guko', 'Buko', 'kakarot', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Pending', ''),
+(1004, 'Dummy@gmail.com', 'Mommy', 'single', 'Kape', 'hgdy0sDAIfISo/gdaL3V1v1ud24K86PhbKPysQMmc8k=', 'User', 'Pending', ''),
+(1005, 'LOGO', '', 'logo', 'logoo', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Active', 'src/userimages/loho1.png');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +142,7 @@ ALTER TABLE `sales_product`
 -- AUTO_INCREMENT for table `ttb`
 --
 ALTER TABLE `ttb`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1000', AUTO_INCREMENT=1005;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1000', AUTO_INCREMENT=1006;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

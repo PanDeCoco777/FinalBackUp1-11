@@ -94,10 +94,6 @@ public class VehicleDashboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         w = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        e = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        a = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         s = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         d = new javax.swing.JPanel();
@@ -116,18 +112,18 @@ public class VehicleDashboard extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(5, 38, 89));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel1.setForeground(new java.awt.Color(193, 232, 255));
         jLabel1.setText("Date");
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel2.setForeground(new java.awt.Color(193, 232, 255));
         jLabel2.setText("Welcome");
 
         jPanel5.setBackground(new java.awt.Color(2, 16, 36));
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         date.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        date.setForeground(new java.awt.Color(109, 165, 192));
+        date.setForeground(new java.awt.Color(193, 232, 255));
         date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         date.setText("Date ");
 
@@ -146,7 +142,7 @@ public class VehicleDashboard extends javax.swing.JFrame {
         jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         AD_nm.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        AD_nm.setForeground(new java.awt.Color(109, 165, 192));
+        AD_nm.setForeground(new java.awt.Color(193, 232, 255));
         AD_nm.setText("Welcome");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -167,7 +163,7 @@ public class VehicleDashboard extends javax.swing.JFrame {
         jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         time.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        time.setForeground(new java.awt.Color(109, 165, 192));
+        time.setForeground(new java.awt.Color(193, 232, 255));
         time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         time.setText("Time ");
 
@@ -185,11 +181,11 @@ public class VehicleDashboard extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel4.setForeground(new java.awt.Color(193, 232, 255));
         jLabel4.setText("Time");
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel10.setForeground(new java.awt.Color(193, 232, 255));
         jLabel10.setText("USER");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -259,7 +255,7 @@ public class VehicleDashboard extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel3.setForeground(new java.awt.Color(193, 232, 255));
         jLabel3.setText("User Dashboard");
 
         javax.swing.GroupLayout qLayout = new javax.swing.GroupLayout(q);
@@ -294,88 +290,24 @@ public class VehicleDashboard extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel5.setForeground(new java.awt.Color(193, 232, 255));
         jLabel5.setText("Parking");
 
         javax.swing.GroupLayout wLayout = new javax.swing.GroupLayout(w);
         w.setLayout(wLayout);
         wLayout.setHorizontalGroup(
             wLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(wLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         wLayout.setVerticalGroup(
             wLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(wLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        e.setBackground(new java.awt.Color(5, 38, 89));
-        e.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        e.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                eMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                eMouseExited(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel6.setText("NULL");
-
-        javax.swing.GroupLayout eLayout = new javax.swing.GroupLayout(e);
-        e.setLayout(eLayout);
-        eLayout.setHorizontalGroup(
-            eLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(eLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        eLayout.setVerticalGroup(
-            eLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(eLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        a.setBackground(new java.awt.Color(5, 38, 89));
-        a.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        a.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                aMouseExited(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel7.setText("Reports");
-
-        javax.swing.GroupLayout aLayout = new javax.swing.GroupLayout(a);
-        a.setLayout(aLayout);
-        aLayout.setHorizontalGroup(
-            aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        aLayout.setVerticalGroup(
-            aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         s.setBackground(new java.awt.Color(5, 38, 89));
@@ -393,24 +325,24 @@ public class VehicleDashboard extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(109, 165, 192));
-        jLabel9.setText("Ticket");
+        jLabel9.setForeground(new java.awt.Color(193, 232, 255));
+        jLabel9.setText("Print");
 
         javax.swing.GroupLayout sLayout = new javax.swing.GroupLayout(s);
         s.setLayout(sLayout);
         sLayout.setHorizontalGroup(
             sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sLayout.setVerticalGroup(
             sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         d.setBackground(new java.awt.Color(5, 38, 89));
@@ -428,7 +360,7 @@ public class VehicleDashboard extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel8.setForeground(new java.awt.Color(193, 232, 255));
         jLabel8.setText("NewTransaction");
 
         javax.swing.GroupLayout dLayout = new javax.swing.GroupLayout(d);
@@ -456,8 +388,6 @@ public class VehicleDashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(w, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(e, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(a, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(s, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(d, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(q, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -470,15 +400,11 @@ public class VehicleDashboard extends javax.swing.JFrame {
                 .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(w, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(q, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setBackground(new java.awt.Color(2, 16, 36));
@@ -559,22 +485,6 @@ public class VehicleDashboard extends javax.swing.JFrame {
     private void wMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wMouseExited
         w.setBackground(hovercolor);
     }//GEN-LAST:event_wMouseExited
-
-    private void eMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eMouseEntered
-       e.setBackground(navcolor);
-    }//GEN-LAST:event_eMouseEntered
-
-    private void eMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eMouseExited
-        e.setBackground(hovercolor);
-    }//GEN-LAST:event_eMouseExited
-
-    private void aMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseEntered
-        a.setBackground(navcolor);
-    }//GEN-LAST:event_aMouseEntered
-
-    private void aMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseExited
-        a.setBackground(hovercolor);
-    }//GEN-LAST:event_aMouseExited
 
     private void sMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sMouseEntered
         s.setBackground(navcolor);
@@ -671,10 +581,8 @@ public class VehicleDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AD_nm;
-    private javax.swing.JPanel a;
     private javax.swing.JPanel d;
     private javax.swing.JLabel date;
-    private javax.swing.JPanel e;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -682,8 +590,6 @@ public class VehicleDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
