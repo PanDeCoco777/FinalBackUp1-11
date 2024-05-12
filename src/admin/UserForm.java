@@ -81,6 +81,8 @@ public class UserForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Delet = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        Delet1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         f = new javax.swing.JPanel();
@@ -198,20 +200,54 @@ public class UserForm extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(109, 165, 192));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("DELET");
+        jLabel10.setText("DELETE");
 
         javax.swing.GroupLayout DeletLayout = new javax.swing.GroupLayout(Delet);
         Delet.setLayout(DeletLayout);
         DeletLayout.setHorizontalGroup(
             DeletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeletLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(DeletLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(jLabel10)
-                .addGap(41, 41, 41))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DeletLayout.setVerticalGroup(
             DeletLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        Delet1.setBackground(new java.awt.Color(7, 46, 51));
+        Delet1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Delet1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Delet1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Delet1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Delet1MouseExited(evt);
+            }
+        });
+
+        jLabel11.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel11.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(109, 165, 192));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Print");
+
+        javax.swing.GroupLayout Delet1Layout = new javax.swing.GroupLayout(Delet1);
+        Delet1.setLayout(Delet1Layout);
+        Delet1Layout.setHorizontalGroup(
+            Delet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Delet1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Delet1Layout.setVerticalGroup(
+            Delet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -234,6 +270,7 @@ public class UserForm extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jLabel1)))
                 .addContainerGap(23, Short.MAX_VALUE))
+            .addComponent(Delet1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +283,9 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Delet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AD_id)
@@ -505,6 +544,63 @@ public class UserForm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_fMouseEntered
 
+    private void Delet1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Delet1MouseClicked
+        int rowIndex = Tb.getSelectedRow();
+        
+        if(rowIndex <0){
+                
+            JOptionPane.showMessageDialog(null,"Please select an Item");
+        }else{
+        try{     
+             dcConnector dc = new dcConnector();   
+             TableModel tbl = Tb.getModel();
+             ResultSet rs = dc.getData("SELECT * FROM   ttb WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
+            
+         if(rs.next()){    
+             MakeUser Mu = new MakeUser();
+             Mu.uid.setText(""+rs.getInt("u_id"));
+             Mu.fn.setText(""+rs.getString("u_Fname"));
+             Mu.ln.setText(""+rs.getString("u_Lname"));
+             Mu.em.setText(""+rs.getString("u_Email"));
+             Mu.us.setText(""+rs.getString("u_Username"));
+             Mu.pw.setText(""+rs.getString("u_Password"));             
+             Mu.ut.setSelectedItem(""+rs.getString("u_type"));
+             Mu.ut1.setSelectedItem(""+rs.getString("u_status"));
+             Mu.image.setIcon(Mu.ResizeImage(rs.getString("u_image"),null, Mu.image));
+             Mu.oldpath = rs.getString("u_image"); 
+             Mu.path = rs.getString("u_image");
+             Mu.destination = rs.getString("u_image");
+             Mu.add1.setEnabled(false);
+             Mu.Update.setEnabled(true);
+             Mu.setVisible(true);
+            
+          if(rs.getString("u_image").isEmpty()){
+              Mu.select.setEnabled(true);
+              Mu.remove.setEnabled(false);
+          }else{
+              Mu.select.setEnabled(false);
+              Mu.remove.setEnabled(true);
+          }   
+             
+             this.dispose();
+         }
+         
+        }catch(SQLException ex){
+            
+            System.out.println(""+ex);
+        }
+       
+    }     
+    }//GEN-LAST:event_Delet1MouseClicked
+
+    private void Delet1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Delet1MouseEntered
+            Delet1.setBackground(hovercolor);
+    }//GEN-LAST:event_Delet1MouseEntered
+
+    private void Delet1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Delet1MouseExited
+            Delet1.setBackground(navcolor);
+    }//GEN-LAST:event_Delet1MouseExited
+
     
     
     /**
@@ -553,11 +649,13 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JLabel AD_id;
     private javax.swing.JPanel Add;
     private javax.swing.JPanel Delet;
+    private javax.swing.JPanel Delet1;
     private javax.swing.JPanel Edit;
     private javax.swing.JTable Tb;
     private javax.swing.JPanel f;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;

@@ -113,6 +113,31 @@ public class MakeUser extends javax.swing.JFrame {
 }
     
     
+     public void imageUpdater(String existingFilePath, String newFilePath){
+        File existingFile = new File(existingFilePath);
+        if (existingFile.exists()) {
+            String parentDirectory = existingFile.getParent();
+            File newFile = new File(newFilePath);
+            String newFileName = newFile.getName();
+            File updatedFile = new File(parentDirectory, newFileName);
+            existingFile.delete();
+            try {
+                Files.copy(newFile.toPath(), updatedFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Image updated successfully.");
+            } catch (IOException e) {
+                System.out.println("Error occurred while updating the image: "+e);
+            }
+        } else {
+            try{
+                Files.copy(selectedFile.toPath(), new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }catch(IOException e){
+                System.out.println("Error on update!");
+            }
+        }
+   }
+
+    
+    
     public static String Email, Username;
     
     public boolean duplicateCheck(){
@@ -258,6 +283,8 @@ public class MakeUser extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(109, 165, 192));
         jLabel3.setText("Username");
+
+        pw.setEnabled(false);
 
         jLabel5.setBackground(new java.awt.Color(41, 41, 41));
         jLabel5.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
@@ -785,7 +812,7 @@ public class MakeUser extends javax.swing.JFrame {
             
             if(dbc.insertData("INSERT INTO ttb (u_Fname, u_Lname, u_Email, u_Username, u_Password, u_type, u_status, u_image)"
                     +" VALUES ('"+uid.getText()+"', '"+ln.getText()+"', '"+em.getText()+"', '"+us.getText()+"', '"
-                    +pass+"', '"+ut.getSelectedItem()+"', '"+ut1.getSelectedItem()+ "','"+destination+"')")){
+                    +pass+"','"+fn.getText()+"', '"+ut.getSelectedItem()+"', '"+ut1.getSelectedItem()+ "','"+destination+"')")){
               try{    
                 Files.copy(selectedFile.toPath(),new File(destination).toPath(),StandardCopyOption.REPLACE_EXISTING);
                 JOptionPane.showMessageDialog(null, "Inserted Successfully!");
@@ -826,10 +853,22 @@ public class MakeUser extends javax.swing.JFrame {
                     + "u_Password = '"+pass+"', "
                         + "u_type = '"+ut.getSelectedItem()+"', "
                             + "u_status = '"+ut1.getSelectedItem()+"' "
-                                + "WHERE u_id='"+Integer.valueOf(uid.getText())+"'");
-          UserForm uf = new UserForm();
-          uf.setVisible(true);
-          this.dispose();
+                                + "',u_iamge = '"+destination+ "' WHERE u_id ='"+Integer.valueOf(uid.getText())+"'");
+                        
+                     if(destination.isEmpty()){
+                         File existingFile = new File(oldpath);
+                         if(existingFile.exists()){
+                             existingFile.delete();
+                         }
+                     }else{
+                         if(!(oldpath.equals(path))){
+                               imageUpdater(oldpath, path);
+                         }
+                     }     
+                         
+                         UserForm uf = new UserForm();
+                         uf.setVisible(true);
+                         this.dispose();
         
         } catch(NoSuchAlgorithmException ex){
                 System.out.println(""+ex);
