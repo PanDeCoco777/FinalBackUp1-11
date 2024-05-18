@@ -51,7 +51,7 @@ public class UserForm extends javax.swing.JFrame {
        public void displayData(){
         try{
             dcConnector dbc = new dcConnector();
-            ResultSet rs = dbc.getData("SELECT u_id, u_Email , u_Fname , u_Lname, u_Username FROM  ttb");
+            ResultSet rs = dbc.getData("SELECT u_id, u_Email , u_Fname , u_Lname, u_Username ,u_type FROM  ttb");
             Tb.setModel(DbUtils.resultSetToTableModel(rs));
              rs.close();
         }catch(SQLException ex){
@@ -283,9 +283,9 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Delet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AD_id)
@@ -501,7 +501,7 @@ public class UserForm extends javax.swing.JFrame {
             }*/
                 
            
-     try {
+    /* try {
          int rowIndex = Tb.getSelectedRow();
         if (rowIndex >= 0){ 
             Class.forName("com.mysql.jdbc.Driver");
@@ -522,7 +522,7 @@ public class UserForm extends javax.swing.JFrame {
             Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(UserForm.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+        }  */
     }//GEN-LAST:event_DeletMouseClicked
 
     private void DeletMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletMouseEntered
@@ -557,31 +557,16 @@ public class UserForm extends javax.swing.JFrame {
              ResultSet rs = dc.getData("SELECT * FROM   ttb WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
             
          if(rs.next()){    
-             MakeUser Mu = new MakeUser();
-             Mu.uid.setText(""+rs.getInt("u_id"));
-             Mu.fn.setText(""+rs.getString("u_Fname"));
-             Mu.ln.setText(""+rs.getString("u_Lname"));
-             Mu.em.setText(""+rs.getString("u_Email"));
-             Mu.us.setText(""+rs.getString("u_Username"));
-             Mu.pw.setText(""+rs.getString("u_Password"));             
-             Mu.ut.setSelectedItem(""+rs.getString("u_type"));
-             Mu.ut1.setSelectedItem(""+rs.getString("u_status"));
-             Mu.image.setIcon(Mu.ResizeImage(rs.getString("u_image"),null, Mu.image));
-             Mu.oldpath = rs.getString("u_image"); 
-             Mu.path = rs.getString("u_image");
-             Mu.destination = rs.getString("u_image");
-             Mu.add1.setEnabled(false);
-             Mu.Update.setEnabled(true);
-             Mu.setVisible(true);
-            
-          if(rs.getString("u_image").isEmpty()){
-              Mu.select.setEnabled(true);
-              Mu.remove.setEnabled(false);
-          }else{
-              Mu.select.setEnabled(false);
-              Mu.remove.setEnabled(true);
-          }   
-             
+             IndividualPrinting ipt = new IndividualPrinting();
+             ipt.uid.setText(""+rs.getInt("u_id"));
+             ipt.fn.setText(""+rs.getString("u_Fname"));
+             ipt.ln.setText(""+rs.getString("u_Lname"));
+             ipt.em.setText(""+rs.getString("u_Email"));
+             ipt.us.setText(""+rs.getString("u_Username"));
+             ipt.at.setText(""+rs.getString("u_type"));
+             ipt.st.setText(""+rs.getString("u_status"));
+             ipt.image.setIcon(ipt.ResizeImage(rs.getString("u_image"),null, ipt.image));
+             ipt.setVisible(true);
              this.dispose();
          }
          

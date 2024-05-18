@@ -5,6 +5,22 @@
  */
 package User;
 
+import Parking.SetUp;
+import config.dcConnector;
+import config.passwordHash;
+import guiprojectforpta.LoginForm;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,11 +35,20 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
      */
     public VehicleInformation() {
         initComponents(); 
+        table();
+        
+        
           this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
+        
+        
     }
-
+   
+    Connection connect;
+    PreparedStatement pst1;
+    PreparedStatement pst2;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,126 +60,156 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        j2 = new javax.swing.JLabel();
+        j3 = new javax.swing.JLabel();
+        j4 = new javax.swing.JLabel();
+        j6 = new javax.swing.JLabel();
         V_b = new javax.swing.JTextField();
         V_pn = new javax.swing.JTextField();
         V_at = new javax.swing.JTextField();
-        V_type = new javax.swing.JComboBox<>();
-        Anga = new javax.swing.JButton();
-        V_at1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        V_at2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        V_vt = new javax.swing.JComboBox<>();
+        V_add = new javax.swing.JButton();
+        V_Cc = new javax.swing.JTextField();
+        j5 = new javax.swing.JLabel();
+        j1 = new javax.swing.JLabel();
+        V_Cn = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        VDT = new javax.swing.JTable();
+        VDB = new javax.swing.JTable();
 
         jPanel1.setBackground(new java.awt.Color(2, 16, 36));
 
         jPanel2.setBackground(new java.awt.Color(2, 16, 36));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel2.setText("Brand");
+        j2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j2.setForeground(new java.awt.Color(125, 160, 202));
+        j2.setText("Brand");
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel3.setText("Plate Number");
+        j3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j3.setForeground(new java.awt.Color(125, 160, 202));
+        j3.setText("Plate Number");
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel4.setText("Arival TIme");
+        j4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j4.setForeground(new java.awt.Color(125, 160, 202));
+        j4.setText("Arival Time");
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel5.setText("Vehicle Type");
+        j6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j6.setForeground(new java.awt.Color(125, 160, 202));
+        j6.setText("Vehicle Type");
 
-        V_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Car", "Motorcycle", "Truck", "Van", "Bus", "Sikad" }));
-
-        Anga.setBackground(new java.awt.Color(2, 16, 36));
-        Anga.setText("ADD");
-        Anga.addActionListener(new java.awt.event.ActionListener() {
+        V_vt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Car", "Motorcycle", "Truck", "Van", "Bus", "Sikad" }));
+        V_vt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AngaActionPerformed(evt);
+                V_vtActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel6.setText("Colour");
+        V_add.setBackground(new java.awt.Color(2, 16, 36));
+        V_add.setText("ADD");
+        V_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V_addActionPerformed(evt);
+            }
+        });
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(125, 160, 202));
-        jLabel7.setText("Number Of Doors");
+        j5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j5.setForeground(new java.awt.Color(125, 160, 202));
+        j5.setText("Colour");
+
+        j1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        j1.setForeground(new java.awt.Color(125, 160, 202));
+        j1.setText("Company Name");
+
+        jButton1.setBackground(new java.awt.Color(2, 16, 36));
+        jButton1.setText("Edit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(2, 16, 36));
+        jButton2.setText("Delete");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Anga, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6))
-                                .addGap(37, 37, 37)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(V_at1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                    .addComponent(V_at)
-                                    .addComponent(V_pn)
-                                    .addComponent(V_b)))))
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(j2)
+                                    .addComponent(j3)
+                                    .addComponent(j4)
+                                    .addComponent(j5))
+                                .addGap(37, 37, 37))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(j1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(V_Cc)
+                            .addComponent(V_at)
+                            .addComponent(V_pn)
+                            .addComponent(V_b, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(V_Cn)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(j6)
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addComponent(V_at2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(44, 44, 44)
-                                .addComponent(V_type, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(V_add, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(V_vt, 0, 153, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(20, 20, 20))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(j1)
+                    .addComponent(V_Cn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(j2)
                     .addComponent(V_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(j3)
                     .addComponent(V_pn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(j4)
                     .addComponent(V_at, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(V_at1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(j5)
+                    .addComponent(V_Cc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(V_at2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(j6)
+                    .addComponent(V_vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(V_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(Anga)
+                    .addComponent(V_add)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -164,18 +219,15 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Vehicle Details");
 
-        VDT.setModel(new javax.swing.table.DefaultTableModel(
+        VDB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Company Name", "Plate Number", "Vehicle Type", "Arival Time", "Color"
             }
         ));
-        jScrollPane1.setViewportView(VDT);
+        jScrollPane1.setViewportView(VDB);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,7 +243,7 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +254,7 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,39 +271,121 @@ public class VehicleInformation extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AngaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AngaActionPerformed
-       
-        String brand = V_b.getText();
-        String Pn;
-        String Atime;
-        String Col;
-        String NumDoor;
-        DefaultTableModel model = new DefaultTableModel();
+    public void table(){
         
-        if(brand.equals(V_b.getText())){
-            model = (DefaultTableModel)VDT.getModel();
-            model.getTableModelListeners();
+        int c;
+        
+                try{
+              
+              Class.forName("com.mysql.jdbc.Driver");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/userandadmin", "root", "");
+                pst1 = connect.prepareStatement("SELECT * FROM parking");
+               ResultSet Rs = pst1.executeQuery();
+               
+               ResultSetMetaData rd = Rs.getMetaData();
+               c = rd.getColumnCount();
+               DefaultTableModel df = (DefaultTableModel)VDB.getModel();
+               df.setRowCount(0);
+               
+               
+               while(Rs.next()){
+                   Vector v2 = new Vector();
+                   
+                    for(int i=1; i<=c; i++){
+                        v2.add(Rs.getString("c_name"));
+                        v2.add(Rs.getString("b_brand"));
+                        v2.add(Rs.getString("p_plate"));
+                        v2.add(Rs.getString("a_at"));
+                        v2.add(Rs.getString("c_c"));
+                        v2.add(Rs.getString("v_type"));
+                    }
+                   df.addRow(v2);
+               }
+                       
+            
+            
+            
+              } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
+    }
+    
+    
+    private void V_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V_addActionPerformed
         
-    }//GEN-LAST:event_AngaActionPerformed
+        String Cn = V_Cn.getText();
+         String Br = V_b.getText();
+         String Pn = V_pn.getText();
+         String At = V_at.getText();
+         String C  = V_Cc.getText();
+        String Vt = V_vt.getSelectedItem().toString();
+
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/userandadmin", "root", "");
+        String query = "insert into parking (c_name, b_brand, p_plate, a_at, c_c, v_type) values (?, ?, ?, ?, ?, ?)";
+        PreparedStatement pst1 = connect.prepareStatement(query);
+        pst1.setString(1, Cn);
+        pst1.setString(2, Br);
+        pst1.setString(3, Pn);
+        pst1.setString(4, At);
+        pst1.setString(5, C);
+        pst1.setString(6, Vt);
+        pst1.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Details Added!");
+
+        V_Cn.setText("");
+        V_b.setText("");
+        V_pn.setText("");
+        V_at.setText("");
+        V_Cc.setText("");
+        V_vt.setSelectedItem(-1);
+
+        
+        table();
+
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(SetUp.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+    }//GEN-LAST:event_V_addActionPerformed
+
+    private void V_vtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V_vtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_V_vtActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Anga;
-    private javax.swing.JTable VDT;
+    private javax.swing.JTable VDB;
+    private javax.swing.JTextField V_Cc;
+    private javax.swing.JTextField V_Cn;
+    private javax.swing.JButton V_add;
     private javax.swing.JTextField V_at;
-    private javax.swing.JTextField V_at1;
-    private javax.swing.JTextField V_at2;
     private javax.swing.JTextField V_b;
     private javax.swing.JTextField V_pn;
-    private javax.swing.JComboBox<String> V_type;
+    private javax.swing.JComboBox<String> V_vt;
+    private javax.swing.JLabel j1;
+    private javax.swing.JLabel j2;
+    private javax.swing.JLabel j3;
+    private javax.swing.JLabel j4;
+    private javax.swing.JLabel j5;
+    private javax.swing.JLabel j6;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

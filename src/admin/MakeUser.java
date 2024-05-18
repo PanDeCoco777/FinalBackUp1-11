@@ -284,8 +284,6 @@ public class MakeUser extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(109, 165, 192));
         jLabel3.setText("Username");
 
-        pw.setEnabled(false);
-
         jLabel5.setBackground(new java.awt.Color(41, 41, 41));
         jLabel5.setFont(new java.awt.Font("Sitka Small", 1, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(109, 165, 192));
@@ -853,7 +851,7 @@ public class MakeUser extends javax.swing.JFrame {
                     + "u_Password = '"+pass+"', "
                         + "u_type = '"+ut.getSelectedItem()+"', "
                             + "u_status = '"+ut1.getSelectedItem()+"' "
-                                + "',u_iamge = '"+destination+ "' WHERE u_id ='"+Integer.valueOf(uid.getText())+"'");
+                                + ",u_image = '"+destination+ "' WHERE u_id ='"+Integer.valueOf(uid.getText())+"'");
                         
                      if(destination.isEmpty()){
                          File existingFile = new File(oldpath);

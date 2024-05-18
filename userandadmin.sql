@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 03:34 AM
+-- Generation Time: May 18, 2024 at 09:52 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `userandadmin`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `parking`
+--
+
+CREATE TABLE `parking` (
+  `c_name` varchar(255) NOT NULL,
+  `b_brand` varchar(255) NOT NULL,
+  `p_plate` varchar(255) NOT NULL,
+  `a_at` varchar(255) NOT NULL,
+  `c_c` varchar(255) NOT NULL,
+  `v_type` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `parking`
+--
+
+INSERT INTO `parking` (`c_name`, `b_brand`, `p_plate`, `a_at`, `c_c`, `v_type`) VALUES
+('', '', '', '', '', 'Car'),
+('Intergalactic', 'Multivers', 'A311', '11:13', 'Black', 'Motorcycle'),
+('Universe', 'swak', 'A', '', '', 'Truck');
 
 -- --------------------------------------------------------
 
@@ -98,7 +122,7 @@ INSERT INTO `ttb` (`u_id`, `u_Email`, `u_Fname`, `u_Lname`, `u_Username`, `u_Pas
 (1002, 'Pable@gmail.com', 'Pable', 'Steven', 'Pan', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'User', 'Active', ''),
 (1003, 'Guko@gmail.com', 'Guko', 'Buko', 'kakarot', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Pending', ''),
 (1004, 'Dummy@gmail.com', 'Mommy', 'single', 'Kape', 'hgdy0sDAIfISo/gdaL3V1v1ud24K86PhbKPysQMmc8k=', 'User', 'Pending', ''),
-(1005, 'LOGO', '', 'logo', 'logoo', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'User', 'Active', 'src/userimages/loho1.png');
+(1005, 'LOGO', 'Logos', 'logo', 'logoo', '1MppcGrfX6jE1PgM3m9zB6+dwmnRQR7x97+RCbYydic=', 'User', 'Active', 'src/userimages/loho1.png');
 
 --
 -- Indexes for dumped tables
